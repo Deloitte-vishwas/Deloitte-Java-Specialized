@@ -13,8 +13,9 @@ public class Main {
 //        p2.productName = "Wheat";
 //        p2.price = 45;
 
-        Product p1 = new Product("Onion", 45.6);
+        NewProduct p1 = new NewProduct("Onion", 45.6);
         Product p2 = new Product();
+        NewProduct p3 = new NewProduct("Laptop", 25000, 1234);
 
         System.out.println("Product P1 is: "+ p1.getProductName());
         System.out.println("Product P2 is: "+ p2.getProductName());

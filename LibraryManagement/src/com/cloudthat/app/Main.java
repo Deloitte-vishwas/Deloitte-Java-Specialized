@@ -7,7 +7,7 @@ public class Main {
 
         Book b1 = new Book();
 
-        Book b2 = new Book("Introduction to Java", "12345678");
+        Book b2 = new Book("Introduction to Java", new Author("James Gosling", "james@gmail.com"));
 
         System.out.println("Book b1 is: "+ b1.getBookName());
         System.out.println("Book b2 is: "+ b2.getBookName());
