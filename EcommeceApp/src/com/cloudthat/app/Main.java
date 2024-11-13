@@ -16,7 +16,7 @@ public class Main {
         Product p1 = new Product("Onion", 45.6);
         Product p2 = new Product();
 
-        System.out.println("Product P1 is: "+ p1.productName);
-        System.out.println("Product P2 is: "+ p2.productName);
+        System.out.println("Product P1 is: "+ p1.getProductName());
+        System.out.println("Product P2 is: "+ p2.getProductName());
     }
 }
