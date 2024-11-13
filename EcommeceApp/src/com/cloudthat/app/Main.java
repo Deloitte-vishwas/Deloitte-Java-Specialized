@@ -17,7 +17,10 @@ public class Main {
         Product p2 = new Product();
         NewProduct p3 = new NewProduct("Laptop", 25000, 1234);
 
-        System.out.println("Product P1 is: "+ p1.getProductName());
-        System.out.println("Product P2 is: "+ p2.getProductName());
+//        System.out.println("Product P1 is: "+ p1.getProductName());
+//        System.out.println("Product P2 is: "+ p2.getProductName());
+
+        System.out.println("Product P1 is: "+ p1);
+        System.out.println("Product P2 is: "+ p2);
     }
 }

@@ -20,4 +20,20 @@ public class NewProduct extends Product{
     public void setProductCode(int productCode) {
         this.productCode = productCode;
     }
+
+    @Override
+    public String toString() {
+
+        return super.toString() +
+                ", "+
+                "productCode=" + productCode +
+                '}';
+    }
+
+    //    public double getPrice(){
+//        if (this.getQuantity() > 2){
+//            return this.getPrice() - 0.5;
+//        }
+//        return this.getPrice();
+//    }
 }

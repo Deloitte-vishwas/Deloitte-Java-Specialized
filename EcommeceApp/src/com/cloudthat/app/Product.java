@@ -67,4 +67,15 @@ public class Product {
     public void setDimension(Dimension dimension) {
         this.dimension = dimension;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productName='" + productName + '\'' +
+                ", color='" + color + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", dimension=" + dimension +
+                '}';
+    }
 }
