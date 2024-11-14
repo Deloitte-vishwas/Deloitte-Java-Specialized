@@ -42,6 +42,17 @@ public class Library {
         }
     }
 
+    public void findByIsbn(String isbn){
+       if(books.containsKey(isbn)){
+           Book book = books.get(isbn);
+           System.out.println("Book Found: ");
+           System.out.println(book);
+       } else {
+           System.out.println("Book Not Found");
+       }
+
+    }
+
     public void lendBook(Borrowable book){
         book.borrow();
     }

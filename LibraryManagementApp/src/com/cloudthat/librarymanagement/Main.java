@@ -12,5 +12,9 @@ public class Main {
 
         library.displayAllBooks();
 
+        // To find a book
+        library.findByIsbn("1234567L");
+        library.findByIsbn("123L");
+
     }
 }
