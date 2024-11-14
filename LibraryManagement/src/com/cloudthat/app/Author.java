@@ -27,4 +27,12 @@ public class Author {
     public void setEmailId(String emailId) {
         this.emailId = emailId;
     }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "name='" + name + '\'' +
+                ", emailId='" + emailId + '\'' +
+                '}';
+    }
 }

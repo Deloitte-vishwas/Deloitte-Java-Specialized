@@ -11,8 +11,8 @@ public class EBook extends Book{
         this.downloadLink = downloadLink;
     }
 
-    public EBook(long id, Author author) {
-        super(id, author);
+    public EBook(String name, Author author) {
+        super(name,author);
     }
 
     @Override
