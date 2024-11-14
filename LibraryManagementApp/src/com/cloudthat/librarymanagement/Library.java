@@ -1,5 +1,7 @@
 package com.cloudthat.librarymanagement;
 
+import com.cloudthat.librarymanagement.exceptions.BookAlreadyExistsException;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -21,9 +23,13 @@ public class Library {
         if(!bookIsbns.contains(book.getISBN())){
             books.put(book.getISBN(), book);
             bookIsbns.add(book.getISBN());
+        } else {
+            throw new BookAlreadyExistsException("Book with ISBN "+book.getISBN()+ " already exists");
         }
     }
 
+    // Create a BookNotFoundException
+    // if book is not present throw that exception below
     public void removeBook(String isbn){
         if(books.containsKey(isbn)){
             Book removedBook = books.remove(isbn);
