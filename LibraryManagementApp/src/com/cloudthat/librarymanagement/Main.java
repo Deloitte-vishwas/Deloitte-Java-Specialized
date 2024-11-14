@@ -16,5 +16,9 @@ public class Main {
         library.findByIsbn("1234567L");
         library.findByIsbn("123L");
 
+        library.findByTitle("Introduction to Java");
+        library.findByTitle("Introduction to JS");
+
+
     }
 }

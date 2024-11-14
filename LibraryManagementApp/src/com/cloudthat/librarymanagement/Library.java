@@ -53,6 +53,17 @@ public class Library {
 
     }
 
+    public void findByTitle(String title){
+        for (Map.Entry<String, Book> entry: books.entrySet()){
+            if(entry.getValue().getName().equals(title)){
+                System.out.println("Book Found: ");
+                System.out.println(entry.getValue());
+            }else {
+                System.out.println("Book Not Found");
+            }
+        }
+    }
+
     public void lendBook(Borrowable book){
         book.borrow();
     }
