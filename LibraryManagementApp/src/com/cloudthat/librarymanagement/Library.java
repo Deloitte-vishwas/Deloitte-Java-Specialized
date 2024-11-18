@@ -42,9 +42,10 @@ public class Library {
             System.out.println("No books in library");
         }else {
             System.out.println("Books in library: ");
-            for (Book b: books.values()){
-                System.out.println(b);
-            }
+            books.forEach((isbn, book) -> System.out.println(book));
+//            for (Book b: books.values()){
+//                System.out.println(b);
+//            }
         }
     }
 
