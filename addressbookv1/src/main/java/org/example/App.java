@@ -20,6 +20,8 @@ public class App
         u1.setUserName("vishwas");
         u1.setEmailId("vishwas@cloudthat.com");
         System.out.println( u1 );
+        System.out.println("Printing u2 again");
+        System.out.println(u2);
 
 
     }

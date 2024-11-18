@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 		https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="user" class="org.example.User">
+    <bean id="user" class="org.example.User" scope="prototype">
         <constructor-arg index="0" value="John Doe" />
         <constructor-arg index="1" value="john.doe@cloudthat.com" />
         <constructor-arg index="2" value="1234567890" />
