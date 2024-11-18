@@ -20,10 +20,17 @@ public class Library {
     }
 
     public void addBook(Book book){
-        if(!bookIsbns.contains(book.getISBN())){
+//        if(!bookIsbns.contains(book.getISBN())){
+//            books.put(book.getISBN(), book);
+//            bookIsbns.add(book.getISBN());
+//        } else {
+//            throw new BookAlreadyExistsException("Book with ISBN "+book.getISBN()+ " already exists");
+//        }
+
+        if(bookIsbns.stream().noneMatch(isbn -> isbn.equals(book.getISBN()))){
             books.put(book.getISBN(), book);
             bookIsbns.add(book.getISBN());
-        } else {
+        }else {
             throw new BookAlreadyExistsException("Book with ISBN "+book.getISBN()+ " already exists");
         }
     }
