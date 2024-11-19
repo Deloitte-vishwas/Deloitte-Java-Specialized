@@ -40,8 +40,8 @@ public class ProductServiceImpl implements ProductService {
         Product product = new Product();
         product.setId(productModel.getId());
         product.setName(productModel.getName());
-        product.setPrice(product.getPrice());
-        product.setQuantity(product.getQuantity());
+        product.setPrice(productModel.getPrice());
+        product.setQuantity(productModel.getQuantity());
         return product;
     }
 }
