@@ -64,6 +64,14 @@ public class ProductServiceImpl implements ProductService {
                 .orElseThrow(()->new RuntimeException("Product Not Found"));
     }
 
+    @Override
+    public List<ProductModel> getProductByName(String productName) {
+        List<Product> productList = productRepository.findAllByName(productName);
+
+        return productList.stream().map(this::productToProductModel).toList();
+
+    }
+
     private ProductModel productToProductModel(Product product){
         ProductModel productModel = new ProductModel();
         productModel.setId(product.getId());

@@ -42,7 +42,13 @@ public class ProductController {
 
     @GetMapping("/api/products/{productId}")
     public ResponseEntity<ApiResponse> getSingleProduct(@PathVariable("productId") Long productId){
-        ProductModel updatedProduct = productService.getProduct(productId);
-        return new ResponseEntity<ApiResponse>(new ApiResponse(true,"product updated successfully",updatedProduct), HttpStatus.OK);
+        ProductModel product = productService.getProduct(productId);
+        return new ResponseEntity<ApiResponse>(new ApiResponse(true,"product fetched successfully",product), HttpStatus.OK);
+    }
+
+    @GetMapping("/api/products/name")
+    public ResponseEntity<ApiResponse> getProductByName(@RequestParam("productName") String productName){
+        List<ProductModel> products = productService.getProductByName(productName);
+        return new ResponseEntity<ApiResponse>(new ApiResponse(true,"product fetched successfully",products), HttpStatus.OK);
     }
 }
