@@ -46,6 +46,8 @@ public class ProductController {
         return new ResponseEntity<ApiResponse>(new ApiResponse(true,"product fetched successfully",product), HttpStatus.OK);
     }
 
+    // /api/products/123
+    // /api/products/name?productName=onion
     @GetMapping("/api/products/name")
     public ResponseEntity<ApiResponse> getProductByName(@RequestParam("productName") String productName){
         List<ProductModel> products = productService.getProductByName(productName);
