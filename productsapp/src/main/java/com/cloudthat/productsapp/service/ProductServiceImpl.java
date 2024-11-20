@@ -56,6 +56,14 @@ public class ProductServiceImpl implements ProductService {
 
     }
 
+    @Override
+    public ProductModel getProduct(Long productId) {
+
+        return productRepository.findById(productId)
+                .map(this::productToProductModel)
+                .orElseThrow(()->new RuntimeException("Product Not Found"));
+    }
+
     private ProductModel productToProductModel(Product product){
         ProductModel productModel = new ProductModel();
         productModel.setId(product.getId());

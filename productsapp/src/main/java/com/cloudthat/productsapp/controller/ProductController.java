@@ -39,4 +39,10 @@ public class ProductController {
         productService.deleteProduct(productid);
         return new ResponseEntity<ApiResponse>(new ApiResponse(true,"product deleted successfully",""), HttpStatus.OK);
     }
+
+    @GetMapping("/api/products/{productId}")
+    public ResponseEntity<ApiResponse> getSingleProduct(@PathVariable("productId") Long productId){
+        ProductModel updatedProduct = productService.getProduct(productId);
+        return new ResponseEntity<ApiResponse>(new ApiResponse(true,"product updated successfully",updatedProduct), HttpStatus.OK);
+    }
 }
