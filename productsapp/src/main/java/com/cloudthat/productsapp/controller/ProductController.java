@@ -6,10 +6,7 @@ import com.cloudthat.productsapp.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,5 +26,17 @@ public class ProductController {
     public ResponseEntity<ApiResponse> createProduct(@RequestBody ProductModel productModel){
         ProductModel createdProduct = productService.createProduct(productModel);
         return new ResponseEntity<ApiResponse>(new ApiResponse(true,"product created successfully",createdProduct), HttpStatus.CREATED);
+    }
+
+    @PutMapping("/api/products/{productId}")
+    public ResponseEntity<ApiResponse> updateProduct(@PathVariable("productId") Long productId, @RequestBody ProductModel productModel){
+        ProductModel updatedProduct = productService.updateProduct(productId, productModel);
+        return new ResponseEntity<ApiResponse>(new ApiResponse(true,"product updated successfully",updatedProduct), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/api/products/{productId}")
+    public ResponseEntity<ApiResponse> deleteProduct(@PathVariable("productId") Long productid){
+        productService.deleteProduct(productid);
+        return new ResponseEntity<ApiResponse>(new ApiResponse(true,"product deleted successfully",""), HttpStatus.OK);
     }
 }
