@@ -1,11 +1,14 @@
 package com.cloudthat.productsapp.model;
 
+import com.cloudthat.productsapp.entity.Category;
+
 public class ProductModel {
 
     private Long id;
     private String name;
     private  Double price;
     private Integer quantity;
+    private Category category;
 
     public String getName() {
         return name;
@@ -39,18 +42,29 @@ public class ProductModel {
         this.id = id;
     }
 
-    public ProductModel(String name, Double price, Integer quantity) {
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public ProductModel(String name, Double price, Integer quantity, Category category) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
+        this.category = category;
     }
 
-    public ProductModel(Long id, String name, Double price, Integer quantity) {
+    public ProductModel(Long id, String name, Double price, Integer quantity, Category category) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
+        this.category = category;
     }
+
 
     public ProductModel() {
     }

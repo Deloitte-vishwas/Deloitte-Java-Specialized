@@ -79,6 +79,7 @@ public class ProductServiceImpl implements ProductService {
         productModel.setName(product.getName());
         productModel.setPrice(product.getPrice());
         productModel.setQuantity(product.getQuantity());
+        productModel.setCategory(product.getCategory());
         return productModel;
     }
 
@@ -88,6 +89,7 @@ public class ProductServiceImpl implements ProductService {
         product.setName(productModel.getName());
         product.setPrice(productModel.getPrice());
         product.setQuantity(productModel.getQuantity());
+        product.setCategory(productModel.getCategory());
         return product;
     }
 }
