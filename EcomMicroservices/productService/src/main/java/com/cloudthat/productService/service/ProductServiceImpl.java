@@ -93,6 +93,8 @@ public class ProductServiceImpl implements ProductService {
 
         product.setQuantity(product.getQuantity() - quantity);
         productRepository.save(product);
+
+        return productToProductModel(product);
     }
 
     private ProductModel productToProductModel(Product product){

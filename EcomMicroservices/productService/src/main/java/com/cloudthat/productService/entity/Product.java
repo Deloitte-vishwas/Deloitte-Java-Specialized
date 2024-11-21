@@ -7,7 +7,6 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@RequiredArgsConstructor
 @Getter
 @Setter
 public class Product {
@@ -17,7 +16,7 @@ public class Product {
     private Long id;
     private String name;
     private Double price;
-    private Integer quantity;
+    private Long quantity;
 
     @Enumerated
     private Category category;
