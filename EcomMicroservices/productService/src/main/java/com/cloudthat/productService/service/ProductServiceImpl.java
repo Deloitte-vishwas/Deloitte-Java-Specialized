@@ -5,6 +5,7 @@ import com.cloudthat.productService.entity.Product;
 import com.cloudthat.productService.exception.ProductServiceCustomException;
 import com.cloudthat.productService.model.ProductModel;
 import com.cloudthat.productService.repository.ProductRepository;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Service
+@Log4j2
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
@@ -19,6 +21,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductModel> getProducts() {
+        log.info("inside getProducts...");
         List<Product> productList = productRepository.findAll();
         return productList.stream()
                 .map(this::productToProductModel).toList();
@@ -26,6 +29,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public ProductModel createProduct(ProductModel productModel) {
+        log.info("Creating a product...");
         Product product = productRepository.save(productModelToProduct(productModel));
         return productToProductModel(product);
     }

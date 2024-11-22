@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
         <module name="productService (1)" />
+        <module name="paymentService" />
         <module name="serviceregistry" />
         <module name="orderService" />
       </profile>
@@ -21,6 +22,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="config-server" options="-parameters" />
       <module name="orderService" options="-parameters" />
+      <module name="paymentService" options="-parameters" />
       <module name="productService" options="-parameters" />
       <module name="productService (1)" options="-parameters" />
       <module name="productService (2)" options="-parameters" />
